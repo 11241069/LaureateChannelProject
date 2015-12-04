@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <p>Videos uploaded by {{ channel_name }}: </p>
+    {% for video in videos %}
+      <img src="{{ video.snippet.thumbnails.default.url }}" style="padding-right: 15px">
+      <div style="vertical-align:top; display: inline-block">
+        <strong>
+        	<a href="https://www.youtube.com/watch?v={{ video.snippet.resourceId.videoId }}"
+        	   target="_blank">
+        	{{ video.snippet.title }}
+        	</a>
+    	</strong>
+      </div><br/><br/>
+    {% endfor %}
+  </body>
+</html>
